@@ -218,7 +218,7 @@ add_action( 'wp_head', 'scd_seo_head', 1 );
 function scd_schema_jsonld( $desc, $site_url, $image, $canonical ) {
 	$phone    = get_theme_mod( 'scd_phone', '+971 54 567 4515' );
 	$email    = get_theme_mod( 'scd_email', 'info@carscrapdubai.com' );
-	$addr     = get_theme_mod( 'scd_address', 'Dubai, United Arab Emirates' );
+	$addr     = function_exists( 'scd_address' ) ? scd_address() : "Dubai, United Arab Emirates\nSharjah Industrial Area 10";
 	$logo_id  = get_theme_mod( 'custom_logo' );
 	$logo_url = $logo_id ? wp_get_attachment_image_url( $logo_id, 'full' ) : $image;
 	$biz_id   = trailingslashit( $site_url ) . '#business';
@@ -241,13 +241,16 @@ function scd_schema_jsonld( $desc, $site_url, $image, $canonical ) {
 		'openingHours'       => 'Mo-Su 00:00-23:59',
 		'areaServed'         => array(
 			array( '@type' => 'City', 'name' => 'Dubai' ),
+			array( '@type' => 'City', 'name' => 'Sharjah' ),
 			array( '@type' => 'Country', 'name' => 'United Arab Emirates' ),
 		),
 		'address'            => array(
 			'@type'           => 'PostalAddress',
-			'addressLocality' => 'Dubai',
+			'streetAddress'   => 'Sharjah Industrial Area 10',
+			'addressLocality' => 'Sharjah',
+			'addressRegion'   => 'Sharjah',
 			'addressCountry'  => 'AE',
-			'streetAddress'   => $addr,
+			'description'     => preg_replace( '/\\s+/', ' ', str_replace( array( "\r\n", "\n", "\r" ), ', ', $addr ) ),
 		),
 		'sameAs'             => array_values( array_filter( array(
 			get_theme_mod( 'scd_facebook', '' ),

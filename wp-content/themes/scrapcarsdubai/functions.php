@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SCD_VERSION', '1.5.0' );
+define( 'SCD_VERSION', '1.5.1' );
 define( 'SCD_DIR', get_template_directory() );
 define( 'SCD_URI', get_template_directory_uri() );
 
@@ -58,24 +58,25 @@ function scd_customize_register( $wp_customize ) {
 	) );
 
 	$fields = array(
-		'scd_phone'     => array( 'Phone', '+971 54 567 4515' ),
-		'scd_phone_2'   => array( 'Phone 2', '+971 52 778 1618' ),
-		'scd_whatsapp'  => array( 'WhatsApp (digits only)', '971545674515' ),
-		'scd_email'     => array( 'Email', 'info@carscrapdubai.com' ),
-		'scd_address'   => array( 'Address', 'Dubai, United Arab Emirates' ),
-		'scd_facebook'  => array( 'Facebook URL', '' ),
-		'scd_instagram' => array( 'Instagram URL', '' ),
+		'scd_phone'     => array( 'Phone', '+971 54 567 4515', 'text' ),
+		'scd_phone_2'   => array( 'Phone 2', '+971 52 778 1618', 'text' ),
+		'scd_whatsapp'  => array( 'WhatsApp (digits only)', '971545674515', 'text' ),
+		'scd_email'     => array( 'Email', 'info@carscrapdubai.com', 'text' ),
+		'scd_address'   => array( 'Address', "Dubai, United Arab Emirates\nSharjah Industrial Area 10", 'textarea' ),
+		'scd_facebook'  => array( 'Facebook URL', 'https://www.facebook.com/profile.php?id=100025197109278', 'text' ),
+		'scd_instagram' => array( 'Instagram URL', '', 'text' ),
 	);
 
 	foreach ( $fields as $id => $data ) {
+		$is_textarea = isset( $data[2] ) && 'textarea' === $data[2];
 		$wp_customize->add_setting( $id, array(
 			'default'           => $data[1],
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => $is_textarea ? 'sanitize_textarea_field' : 'sanitize_text_field',
 		) );
 		$wp_customize->add_control( $id, array(
 			'label'   => $data[0],
 			'section' => 'scd_contact',
-			'type'    => 'text',
+			'type'    => $is_textarea ? 'textarea' : 'text',
 		) );
 	}
 }
@@ -94,7 +95,47 @@ function scd_email() {
 	return get_theme_mod( 'scd_email', 'info@carscrapdubai.com' );
 }
 function scd_address() {
-	return get_theme_mod( 'scd_address', 'Dubai, United Arab Emirates' );
+	return implode( "\n", scd_address_lines() );
+}
+
+/**
+ * Address lines for Contact / footer (exact 2-line layout).
+ *
+ * @return string[]
+ */
+function scd_address_lines() {
+	$default = array(
+		'Dubai, United Arab Emirates',
+		'Sharjah Industrial Area 10',
+	);
+	$addr = get_theme_mod( 'scd_address', implode( "\n", $default ) );
+	if ( ! is_string( $addr ) || '' === trim( $addr ) ) {
+		return $default;
+	}
+	$lines = preg_split( '/\R+/', trim( $addr ) );
+	$lines = array_values( array_filter( array_map( 'trim', (array) $lines ) ) );
+	return count( $lines ) >= 2 ? $lines : $default;
+}
+
+/**
+ * Print address as separate block lines (no soft-wrap across lines).
+ *
+ * @param string $class Optional CSS class on each line.
+ */
+function scd_the_address( $class = 'scd-address-line' ) {
+	foreach ( scd_address_lines() as $line ) {
+		printf(
+			'<span class="%s">%s</span>',
+			esc_attr( $class ),
+			esc_html( $line )
+		);
+	}
+}
+function scd_facebook() {
+	return get_theme_mod( 'scd_facebook', 'https://www.facebook.com/profile.php?id=100025197109278' );
+}
+function scd_instagram() {
+	return get_theme_mod( 'scd_instagram', '' );
 }
 
 /**

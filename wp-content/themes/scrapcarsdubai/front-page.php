@@ -151,11 +151,11 @@ $wa_href    = 'https://wa.me/' . scd_whatsapp();
 		<div class="container">
 			<div class="stats reveal">
 				<div class="stat">
-					<strong>10,000+</strong>
+					<strong>1,000+</strong>
 					<span><?php scd_e( 'stats_customers' ); ?></span>
 				</div>
 				<div class="stat">
-					<strong>8,000+</strong>
+					<strong>800+</strong>
 					<span><?php scd_e( 'stats_deals' ); ?></span>
 				</div>
 				<div class="stat">
