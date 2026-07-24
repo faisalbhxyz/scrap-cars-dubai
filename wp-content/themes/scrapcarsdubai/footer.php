@@ -45,7 +45,7 @@
 		</div>
 		<div class="footer-bottom">
 			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php scd_e( 'footer_rights' ); ?></span>
-			<span>carscrapdubai.com</span>
+			<a href="https://wa.me/8801310790697" target="_blank" rel="noopener noreferrer">Developed By Adstryker</a>
 		</div>
 	</div>
 </footer>
