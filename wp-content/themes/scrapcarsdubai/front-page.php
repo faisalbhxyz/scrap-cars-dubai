@@ -210,8 +210,14 @@ $wa_href    = 'https://wa.me/' . scd_whatsapp();
 				<h2><?php scd_e( 'yard_title' ); ?></h2>
 				<p><?php scd_e( 'yard_sub' ); ?></p>
 			</div>
-			<div class="yard-grid reveal">
-				<figure class="yard-shot yard-shot--wide">
+
+			<div class="yard-intro reveal">
+				<div class="yard-copy">
+					<h3><?php scd_e( 'about_title' ); ?></h3>
+					<p><?php scd_e( 'about_p1' ); ?></p>
+					<p><?php scd_e( 'about_p2' ); ?></p>
+				</div>
+				<figure class="yard-shot yard-shot--feature">
 					<img
 						src="<?php echo esc_url( SCD_URI . '/assets/images/yard/junk-car-removal-dubai-auto-salvage.jpg' ); ?>"
 						alt="<?php echo esc_attr( scd__( 'img_alt_salvage' ) ); ?>"
@@ -221,21 +227,42 @@ $wa_href    = 'https://wa.me/' . scd_whatsapp();
 						decoding="async"
 					>
 				</figure>
-				<figure class="yard-shot">
+			</div>
+
+			<?php
+			$ops_gallery = array(
+				array( 'file' => 'tow-truck-car-pickup-dubai.jpg', 'alt' => 'img_alt_tow_pickup', 'mod' => 'ops-span-tall', 'w' => 1200, 'h' => 1600 ),
+				array( 'file' => 'scrap-yard-stacked-cars-dubai.jpg', 'alt' => 'img_alt_stacked', 'mod' => 'ops-span-tall', 'w' => 899, 'h' => 1262 ),
+				array( 'file' => 'scrap-car-tow-truck-dubai.jpg', 'alt' => 'img_alt_tow_truck', 'mod' => 'ops-span-tall', 'w' => 1100, 'h' => 1466 ),
+				array( 'file' => 'scrap-car-engines-parts-dubai-recycling.jpg', 'alt' => 'img_alt_engines', 'mod' => 'ops-span-tall', 'w' => 1200, 'h' => 1592 ),
+				array( 'file' => 'buy-used-suv-scrap-dubai.jpg', 'alt' => 'img_alt_used_suv', 'mod' => 'ops-span-wide', 'w' => 1400, 'h' => 1050 ),
+				array( 'file' => 'abandoned-mercedes-scrap-dubai.jpg', 'alt' => 'img_alt_mercedes', 'mod' => 'ops-span-mid', 'w' => 960, 'h' => 1280 ),
+				array( 'file' => 'accident-damaged-scrap-car-dubai.jpg', 'alt' => 'img_alt_accident', 'mod' => 'ops-span-mid', 'w' => 1100, 'h' => 1290 ),
+				array( 'file' => 'mercedes-engine-scrap-parts-dubai.jpg', 'alt' => 'img_alt_merc_engine', 'mod' => 'ops-span-wide', 'w' => 1200, 'h' => 900 ),
+				array( 'file' => 'scrap-mitsubishi-pajero-dubai.jpg', 'alt' => 'img_alt_pajero', 'mod' => 'ops-span-wide', 'w' => 1280, 'h' => 960 ),
+				array( 'file' => 'abandoned-suv-scrap-dubai.jpg', 'alt' => 'img_alt_abandoned_suv', 'mod' => 'ops-span-mid', 'w' => 899, 'h' => 1599 ),
+				array( 'file' => 'scrap-car-recovery-dubai-desert.jpg', 'alt' => 'img_alt_desert', 'mod' => 'ops-span-mid', 'w' => 960, 'h' => 1280 ),
+				array( 'file' => 'scrap-suv-pickup-dubai.jpg', 'alt' => 'img_alt_terrain', 'mod' => 'ops-span-mid', 'w' => 1100, 'h' => 1466 ),
+				array( 'file' => 'rear-damaged-junk-car-dubai.jpg', 'alt' => 'img_alt_rear_damage', 'mod' => 'ops-span-mid', 'w' => 720, 'h' => 1600 ),
+				array( 'file' => 'car-scrap-yard-dubai-salvage-lot.jpg', 'alt' => 'img_alt_hero', 'mod' => 'ops-span-wide', 'w' => 1600, 'h' => 1067 ),
+				array( 'file' => 'used-pajero-scrap-buy-dubai.jpg', 'alt' => 'img_alt_pajero_rear', 'mod' => 'ops-span-mid', 'w' => 1280, 'h' => 960 ),
+				array( 'file' => 'end-of-life-suv-scrap-dubai.jpg', 'alt' => 'img_alt_eol_suv', 'mod' => 'ops-span-mid', 'w' => 1100, 'h' => 1466 ),
+				array( 'file' => 'scrap-car-engine-inspection-dubai.jpg', 'alt' => 'img_alt_engine_inspect', 'mod' => 'ops-span-full', 'w' => 864, 'h' => 1152 ),
+			);
+			?>
+			<div class="ops-mosaic reveal" aria-label="<?php echo esc_attr( scd_is_ar() ? 'معرض عمليات السكراب' : 'Scrap operations photo gallery' ); ?>">
+				<?php foreach ( $ops_gallery as $shot ) : ?>
+				<figure class="yard-shot <?php echo esc_attr( $shot['mod'] ); ?>">
 					<img
-						src="<?php echo esc_url( SCD_URI . '/assets/images/yard/scrap-car-engines-parts-dubai-recycling.jpg' ); ?>"
-						alt="<?php echo esc_attr( scd__( 'img_alt_engines' ) ); ?>"
-						width="1200"
-						height="1592"
+						src="<?php echo esc_url( SCD_URI . '/assets/images/yard/' . $shot['file'] ); ?>"
+						alt="<?php echo esc_attr( scd__( $shot['alt'] ) ); ?>"
+						width="<?php echo esc_attr( (string) $shot['w'] ); ?>"
+						height="<?php echo esc_attr( (string) $shot['h'] ); ?>"
 						loading="lazy"
 						decoding="async"
 					>
 				</figure>
-				<div class="yard-copy">
-					<h3><?php scd_e( 'about_title' ); ?></h3>
-					<p><?php scd_e( 'about_p1' ); ?></p>
-					<p><?php scd_e( 'about_p2' ); ?></p>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>

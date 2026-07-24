@@ -34,6 +34,9 @@
 				<h4><?php scd_e( 'nav_contact' ); ?></h4>
 				<ul class="footer-links">
 					<li><a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', scd_phone() ) ); ?>"><?php echo esc_html( scd_phone() ); ?></a></li>
+					<?php if ( scd_phone_2() ) : ?>
+					<li><a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', scd_phone_2() ) ); ?>"><?php echo esc_html( scd_phone_2() ); ?></a></li>
+					<?php endif; ?>
 					<li><a href="mailto:<?php echo esc_attr( scd_email() ); ?>"><?php echo esc_html( scd_email() ); ?></a></li>
 					<li><?php echo esc_html( scd_address() ); ?></li>
 					<li><?php scd_e( 'contact_hours' ); ?>: <?php scd_e( 'contact_hours_val' ); ?></li>

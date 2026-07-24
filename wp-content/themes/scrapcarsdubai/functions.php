@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SCD_VERSION', '1.3.0' );
+define( 'SCD_VERSION', '1.4.0' );
 define( 'SCD_DIR', get_template_directory() );
 define( 'SCD_URI', get_template_directory_uri() );
 
@@ -58,6 +58,7 @@ function scd_customize_register( $wp_customize ) {
 
 	$fields = array(
 		'scd_phone'     => array( 'Phone', '+971 54 567 4515' ),
+		'scd_phone_2'   => array( 'Phone 2', '+971 52 778 1618' ),
 		'scd_whatsapp'  => array( 'WhatsApp (digits only)', '971545674515' ),
 		'scd_email'     => array( 'Email', 'info@carscrapdubai.com' ),
 		'scd_address'   => array( 'Address', 'Dubai, United Arab Emirates' ),
@@ -81,6 +82,9 @@ add_action( 'customize_register', 'scd_customize_register' );
 
 function scd_phone() {
 	return get_theme_mod( 'scd_phone', '+971 54 567 4515' );
+}
+function scd_phone_2() {
+	return get_theme_mod( 'scd_phone_2', '+971 52 778 1618' );
 }
 function scd_whatsapp() {
 	return get_theme_mod( 'scd_whatsapp', '971545674515' );

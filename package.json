@@ -1,0 +1,8 @@
+{
+  "name": "scrap-cars-dubai",
+  "private": true,
+  "scripts": {
+    "export": "python3 export_static.py",
+    "build": "echo 'Static site ready in /site'"
+  }
+}

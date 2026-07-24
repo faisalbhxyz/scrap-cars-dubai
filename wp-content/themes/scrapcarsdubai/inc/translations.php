@@ -306,6 +306,66 @@ function scd_strings() {
 			'en' => 'Junk car removal Dubai — stacked salvage vehicles at auto scrap yard',
 			'ar' => 'إزالة سيارات الخردة في دبي — سيارات مكدسة في ساحة السكراب',
 		),
+		'img_alt_tow_pickup' => array(
+			'en' => 'Flatbed tow truck picking up scrap SUV for car removal in Dubai',
+			'ar' => 'شاحنة سطحة تنقل سيارة SUV سكراب لإزالتها في دبي',
+		),
+		'img_alt_tow_truck' => array(
+			'en' => 'Scrap car tow truck fleet ready for junk car pickup in Dubai',
+			'ar' => 'شاحنة سحب سيارات سكراب جاهزة لجمع السيارات في دبي',
+		),
+		'img_alt_stacked' => array(
+			'en' => 'Stacked scrap cars at Dubai auto salvage and recycling yard',
+			'ar' => 'سيارات سكراب مكدسة في ساحة إعادة التدوير في دبي',
+		),
+		'img_alt_used_suv' => array(
+			'en' => 'Used SUV bought for scrap and cash in Dubai',
+			'ar' => 'سيارة SUV مستعملة مشتراة للسكراب نقداً في دبي',
+		),
+		'img_alt_mercedes' => array(
+			'en' => 'Abandoned dusty Mercedes scrap car for sale removal in Dubai',
+			'ar' => 'سيارة مرسيدس مهجورة متربة جاهزة للإزالة في دبي',
+		),
+		'img_alt_accident' => array(
+			'en' => 'Accident damaged scrap car ready for junk removal Dubai',
+			'ar' => 'سيارة سكراب متضررة بحادث جاهزة للإزالة في دبي',
+		),
+		'img_alt_merc_engine' => array(
+			'en' => 'Mercedes engine bay scrap parts inspection in Dubai',
+			'ar' => 'فحص محرك مرسيدس وقطع غيار السكراب في دبي',
+		),
+		'img_alt_pajero' => array(
+			'en' => 'Mitsubishi Pajero scrap SUV cash for cars Dubai',
+			'ar' => 'ميتسوبيشي باجيرو سكراب — نقداً مقابل السيارات في دبي',
+		),
+		'img_alt_abandoned_suv' => array(
+			'en' => 'Abandoned dusty SUV scrap car pickup Dubai',
+			'ar' => 'سيارة SUV مهجورة متربة جاهزة للجمع في دبي',
+		),
+		'img_alt_desert' => array(
+			'en' => 'Scrap car recovery from desert areas around Dubai',
+			'ar' => 'استعادة سيارات السكراب من مناطق صحراوية حول دبي',
+		),
+		'img_alt_terrain' => array(
+			'en' => 'Used scrap SUV purchased for cash across Dubai industrial areas',
+			'ar' => 'شراء سيارة SUV سكراب نقداً في المناطق الصناعية بدبي',
+		),
+		'img_alt_rear_damage' => array(
+			'en' => 'Rear-damaged junk car for scrap removal in Dubai',
+			'ar' => 'سيارة خردة متضررة من الخلف لإزالتها في دبي',
+		),
+		'img_alt_pajero_rear' => array(
+			'en' => 'Mitsubishi Pajero rear view scrap SUV for cash Dubai',
+			'ar' => 'ميتسوبيشي باجيرو من الخلف — سكراب نقداً في دبي',
+		),
+		'img_alt_eol_suv' => array(
+			'en' => 'End-of-life SUV scrap car purchase Dubai UAE',
+			'ar' => 'شراء سيارة SUV نهاية العمر للسكراب في دبي',
+		),
+		'img_alt_engine_inspect' => array(
+			'en' => 'Scrap car engine inspection and parts salvage Dubai',
+			'ar' => 'فحص محرك سيارة السكراب واستعادة القطع في دبي',
+		),
 		'menu_close' => array( 'en' => 'Close menu', 'ar' => 'إغلاق القائمة' ),
 	);
 
