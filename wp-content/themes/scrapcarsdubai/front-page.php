@@ -202,6 +202,51 @@ $wa_href    = 'https://wa.me/' . scd_whatsapp();
 		</div>
 	</section>
 
+	<section class="section section-locations" id="locations">
+		<div class="container">
+			<div class="section-head reveal">
+				<p class="section-eyebrow"><?php echo esc_html( scd_is_ar() ? 'مناطق الخدمة' : 'Service areas' ); ?></p>
+				<h2><?php scd_e( 'locations_title' ); ?></h2>
+				<p><?php scd_e( 'locations_sub' ); ?></p>
+			</div>
+
+			<div class="locations-panels reveal">
+				<div class="locations-panel">
+					<h3 class="locations-panel-title">
+						<svg class="locations-pin" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+							<path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+						</svg>
+						<?php scd_e( 'locations_dubai_title' ); ?>
+					</h3>
+					<ul class="locations-list">
+						<?php foreach ( scd_dubai_locations() as $loc ) : ?>
+						<li><?php echo esc_html( scd_location_label( $loc ) ); ?></li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+
+				<div class="locations-panel">
+					<h3 class="locations-panel-title">
+						<svg class="locations-pin" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+							<path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+						</svg>
+						<?php scd_e( 'locations_uae_title' ); ?>
+					</h3>
+					<p class="locations-group-label"><?php scd_e( 'locations_abu_dhabi_title' ); ?></p>
+					<ul class="locations-list">
+						<?php foreach ( scd_abu_dhabi_locations() as $loc ) : ?>
+						<li><?php echo esc_html( scd_location_label( $loc ) ); ?></li>
+						<?php endforeach; ?>
+					</ul>
+					<ul class="locations-list locations-list--emirates">
+						<?php foreach ( scd_uae_locations() as $loc ) : ?>
+						<li><?php echo esc_html( scd_location_label( $loc ) ); ?></li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<section class="section section-yard" id="about">
 		<div class="container">

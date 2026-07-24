@@ -395,6 +395,11 @@ body.rtl .hero-scrim {
   grid-column: span 3;
   grid-row: span 2;
 }
+.ops-mosaic .ops-span-full {
+  grid-column: span 12;
+  grid-row: span 2;
+  min-height: clamp(220px, 28vw, 360px);
+}
 .ops-mosaic .yard-shot:nth-child(1) { animation-delay: .05s; }
 .ops-mosaic .yard-shot:nth-child(2) { animation-delay: .1s; }
 .ops-mosaic .yard-shot:nth-child(3) { animation-delay: .15s; }
@@ -660,6 +665,69 @@ body.rtl .step::after { transform-origin: right; }
   .brands { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem .75rem; }
   .brand-chip { min-height: 2.75rem; }
   .brand-chip img { max-width: 5.5rem; height: 1.9rem; }
+}
+
+/* Locations — buy areas */
+.section-locations {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(42, 143, 60, 0.08), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 100%, rgba(30, 107, 46, 0.06), transparent 50%),
+    var(--scd-mist);
+}
+.locations-panels {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2rem 2.5rem;
+  align-items: start;
+}
+.locations-panel-title {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: 1.25rem;
+  margin: 0 0 1.15rem;
+  color: var(--scd-black);
+}
+.locations-pin {
+  color: var(--scd-green);
+  flex-shrink: 0;
+}
+.locations-group-label {
+  margin: 0 0 .65rem;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--scd-green-dim);
+}
+.locations-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .45rem 1.25rem;
+}
+.locations-list li {
+  position: relative;
+  padding-inline-start: 1rem;
+  color: var(--scd-ink);
+  font-size: .95rem;
+  font-weight: 500;
+}
+.locations-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: .55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--scd-green);
+}
+.locations-list--emirates {
+  margin-top: 1.35rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--scd-border);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* FAQ */
@@ -992,6 +1060,7 @@ body.rtl .step::after { transform-origin: right; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .feature-row { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .locations-panels { grid-template-columns: 1fr; gap: 2rem; }
 }
 @media (max-width: 760px) {
   .menu-toggle { display: block; }
@@ -1041,6 +1110,8 @@ body.rtl .step::after { transform-origin: right; }
   .why-grid,
   .stats,
   .footer-grid { grid-template-columns: 1fr; }
+  .locations-list,
+  .locations-list--emirates { grid-template-columns: 1fr 1fr; }
   .hero {
     min-height: min(68svh, 560px);
     align-items: end;
@@ -1067,6 +1138,10 @@ body.rtl .step::after { transform-origin: right; }
     grid-row: span 2;
   }
   .ops-mosaic .ops-span-wide {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+  .ops-mosaic .ops-span-full {
     grid-column: span 6;
     grid-row: span 2;
   }

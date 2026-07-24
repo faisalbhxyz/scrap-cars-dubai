@@ -16,6 +16,7 @@
 				<h4><?php scd_e( 'footer_links' ); ?></h4>
 				<ul class="footer-links">
 					<li><a href="<?php echo esc_url( scd_lang_url( '/' ) ); ?>"><?php scd_e( 'nav_home' ); ?></a></li>
+					<li><a href="<?php echo esc_url( scd_lang_url( '/#locations' ) ); ?>"><?php scd_e( 'nav_locations' ); ?></a></li>
 					<li><a href="<?php echo esc_url( scd_lang_url( '/#why-us' ) ); ?>"><?php scd_e( 'nav_why' ); ?></a></li>
 					<li><a href="<?php echo esc_url( scd_lang_url( '/about-us/' ) ); ?>"><?php scd_e( 'nav_about' ); ?></a></li>
 					<li><a href="<?php echo esc_url( scd_lang_url( '/privacy-policy/' ) ); ?>"><?php scd_e( 'nav_privacy' ); ?></a></li>

@@ -9,12 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SCD_VERSION', '1.4.0' );
+define( 'SCD_VERSION', '1.5.0' );
 define( 'SCD_DIR', get_template_directory() );
 define( 'SCD_URI', get_template_directory_uri() );
 
 require_once SCD_DIR . '/inc/i18n.php';
 require_once SCD_DIR . '/inc/services.php';
+require_once SCD_DIR . '/inc/locations.php';
 require_once SCD_DIR . '/inc/service-translations.php';
 require_once SCD_DIR . '/inc/translations.php';
 require_once SCD_DIR . '/inc/seo.php';
@@ -104,6 +105,7 @@ function scd_fallback_menu() {
 		array( 'nav_home', home_url( '/' ) ),
 		array( 'nav_services', home_url( '/#services' ) ),
 		array( 'nav_how', home_url( '/#how-it-works' ) ),
+		array( 'nav_locations', home_url( '/#locations' ) ),
 		array( 'nav_why', home_url( '/#why-us' ) ),
 		array( 'nav_about', home_url( '/about-us/' ) ),
 		array( 'nav_faq', home_url( '/faqs/' ) ),
