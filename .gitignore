@@ -1,0 +1,53 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp
+
+# PHP / Composer
+/vendor/
+composer.lock
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Env / secrets
+.env
+.env.*
+wp-cli.local.yml
+wp-config.php
+.vercel
+
+# Debug / cache
+wp-content/debug.log
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/upgrade-temp-backup/
+
+# Default WP themes (not customized)
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentyfive/
+
+# Large stock plugins (install via WP)
+wp-content/plugins/jetpack/
+
+# SQLite / local DB dumps
+*.sqlite
+*.sql
+wp-content/database/*.sqlite
+
+# Temp import scripts
+logo.b64
+*.b64
+scd-setup.php
+import-logo.php
+
+.phpunit.result.cache
