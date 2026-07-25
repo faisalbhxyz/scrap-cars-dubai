@@ -1052,6 +1052,30 @@ body.rtl .step::after { transform-origin: right; }
   margin-bottom: .75rem;
 }
 .footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.footer-socials {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: .65rem;
+  margin-top: 1rem;
+}
+.footer-socials .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.footer-socials .social-logo {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 7px;
+}
+.footer-socials .social-link:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
 .social-link {
   display: inline-flex;
   align-items: center;

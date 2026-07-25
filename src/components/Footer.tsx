@@ -21,6 +21,85 @@ export function Footer({ locale }: { locale: Locale }) {
                 className="custom-logo"
               />
               <p>{t(locale, "footer_about")}</p>
+              <div className="footer-socials" aria-label="Social media">
+                {site.facebook ? (
+                  <a
+                    className="social-link"
+                    href={site.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t(locale, "social_facebook")}
+                  >
+                    <svg
+                      className="social-logo facebook-logo"
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      aria-hidden="true"
+                    >
+                      <rect width="24" height="24" rx="6.5" fill="#1877F2" />
+                      <path
+                        fill="#fff"
+                        d="M16.67 12.55h-2.18V19h-3.02v-6.45H9.7V9.95h1.77V8.33c0-1.75 1.07-2.7 2.63-2.7.75 0 1.39.06 1.58.08v1.83h-1.08c-.85 0-1.01.4-1.01.99v1.42h2.15l-.28 2.6z"
+                      />
+                    </svg>
+                  </a>
+                ) : null}
+                {site.instagram ? (
+                  <a
+                    className="social-link"
+                    href={site.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t(locale, "social_instagram")}
+                  >
+                    <svg
+                      className="social-logo instagram-logo"
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      aria-hidden="true"
+                    >
+                      <defs>
+                        <radialGradient id="scdIgGrad" cx="0.3" cy="1.07" r="1.2">
+                          <stop offset="0" stopColor="#fdf497" />
+                          <stop offset="0.45" stopColor="#fd5949" />
+                          <stop offset="0.6" stopColor="#d6249f" />
+                          <stop offset="0.9" stopColor="#285AEB" />
+                        </radialGradient>
+                      </defs>
+                      <rect width="24" height="24" rx="6.5" fill="url(#scdIgGrad)" />
+                      <path
+                        fill="#fff"
+                        d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.92a3.12 3.12 0 1 1 0-6.24 3.12 3.12 0 0 1 0 6.24zM17.04 6.84a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zM12 4.8c-1.96 0-2.2.01-2.97.04-.76.03-1.28.16-1.74.34-.47.18-.87.43-1.27.82-.4.4-.64.8-.82 1.27-.18.46-.3.98-.34 1.74C4.81 9.8 4.8 10.04 4.8 12s.01 2.2.04 2.97c.03.76.16 1.28.34 1.74.18.47.43.87.82 1.27.4.4.8.64 1.27.82.46.18.98.3 1.74.34.77.03 1.01.04 2.97.04s2.2-.01 2.97-.04c.76-.03 1.28-.16 1.74-.34.47-.18.87-.43 1.27-.82.4-.4.64-.8.82-1.27.18-.46.3-.98.34-1.74.03-.77.04-1.01.04-2.97s-.01-2.2-.04-2.97c-.03-.76-.16-1.28-.34-1.74-.18-.47-.43-.87-.82-1.27-.4-.4-.8-.64-1.27-.82-.46-.18-.98-.3-1.74-.34C14.2 4.81 13.96 4.8 12 4.8zm0 1.44c1.92 0 2.15.01 2.91.04.7.03 1.08.15 1.34.25.34.13.58.29.84.55.26.26.42.5.55.84.1.26.22.64.25 1.34.03.76.04.99.04 2.91s-.01 2.15-.04 2.91c-.03.7-.15 1.08-.25 1.34-.13.34-.29.58-.55.84-.26.26-.5.42-.84.55-.26.1-.64.22-1.34.25-.76.03-.99.04-2.91.04s-2.15-.01-2.91-.04c-.7-.03-1.08-.15-1.34-.25-.34-.13-.58-.29-.84-.55-.26-.26-.42-.5-.55-.84-.1-.26-.22-.64-.25-1.34-.03-.76-.04-.99-.04-2.91s.01-2.15.04-2.91c.03-.7.15-1.08.25-1.34.13-.34.29-.58.55-.84.26-.26.5-.42.84-.55.26-.1.64-.22 1.34-.25.76-.03.99-.04 2.91-.04z"
+                      />
+                    </svg>
+                  </a>
+                ) : null}
+                {site.x ? (
+                  <a
+                    className="social-link"
+                    href={site.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t(locale, "social_x")}
+                  >
+                    <svg
+                      className="social-logo x-logo"
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      aria-hidden="true"
+                    >
+                      <rect width="24" height="24" rx="6.5" fill="#000" />
+                      <path
+                        fill="#fff"
+                        d="M13.54 10.94 18.2 5.5h-1.1l-4.05 4.72L9.8 5.5H5.75l4.89 7.12L5.9 18.5h1.1l4.27-4.98 3.41 4.98h4.05l-5.19-7.56zm-1.51 1.76-.5-.71-3.95-5.64h1.7l3.18 4.55.5.71 4.13 5.91h-1.7l-3.36-4.82z"
+                      />
+                    </svg>
+                  </a>
+                ) : null}
+              </div>
             </div>
             <div>
               <h4>{t(locale, "footer_links")}</h4>
@@ -81,92 +160,6 @@ export function Footer({ locale }: { locale: Locale }) {
                 <li>
                   {t(locale, "contact_hours")}: {t(locale, "contact_hours_val")}
                 </li>
-                {site.facebook ? (
-                  <li>
-                    <a
-                      className="social-link"
-                      href={site.facebook}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t(locale, "social_facebook")}
-                    >
-                      <svg
-                        className="social-logo facebook-logo"
-                        viewBox="0 0 24 24"
-                        width="20"
-                        height="20"
-                        aria-hidden="true"
-                      >
-                        <rect width="24" height="24" rx="6.5" fill="#1877F2" />
-                        <path
-                          fill="#fff"
-                          d="M16.67 12.55h-2.18V19h-3.02v-6.45H9.7V9.95h1.77V8.33c0-1.75 1.07-2.7 2.63-2.7.75 0 1.39.06 1.58.08v1.83h-1.08c-.85 0-1.01.4-1.01.99v1.42h2.15l-.28 2.6z"
-                        />
-                      </svg>
-                      <span>{t(locale, "social_facebook")}</span>
-                    </a>
-                  </li>
-                ) : null}
-                {site.instagram ? (
-                  <li>
-                    <a
-                      className="social-link"
-                      href={site.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t(locale, "social_instagram")}
-                    >
-                      <svg
-                        className="social-logo instagram-logo"
-                        viewBox="0 0 24 24"
-                        width="20"
-                        height="20"
-                        aria-hidden="true"
-                      >
-                        <defs>
-                          <radialGradient id="scdIgGrad" cx="0.3" cy="1.07" r="1.2">
-                            <stop offset="0" stopColor="#fdf497" />
-                            <stop offset="0.45" stopColor="#fd5949" />
-                            <stop offset="0.6" stopColor="#d6249f" />
-                            <stop offset="0.9" stopColor="#285AEB" />
-                          </radialGradient>
-                        </defs>
-                        <rect width="24" height="24" rx="6.5" fill="url(#scdIgGrad)" />
-                        <path
-                          fill="#fff"
-                          d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.92a3.12 3.12 0 1 1 0-6.24 3.12 3.12 0 0 1 0 6.24zM17.04 6.84a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zM12 4.8c-1.96 0-2.2.01-2.97.04-.76.03-1.28.16-1.74.34-.47.18-.87.43-1.27.82-.4.4-.64.8-.82 1.27-.18.46-.3.98-.34 1.74C4.81 9.8 4.8 10.04 4.8 12s.01 2.2.04 2.97c.03.76.16 1.28.34 1.74.18.47.43.87.82 1.27.4.4.8.64 1.27.82.46.18.98.3 1.74.34.77.03 1.01.04 2.97.04s2.2-.01 2.97-.04c.76-.03 1.28-.16 1.74-.34.47-.18.87-.43 1.27-.82.4-.4.64-.8.82-1.27.18-.46.3-.98.34-1.74.03-.77.04-1.01.04-2.97s-.01-2.2-.04-2.97c-.03-.76-.16-1.28-.34-1.74-.18-.47-.43-.87-.82-1.27-.4-.4-.8-.64-1.27-.82-.46-.18-.98-.3-1.74-.34C14.2 4.81 13.96 4.8 12 4.8zm0 1.44c1.92 0 2.15.01 2.91.04.7.03 1.08.15 1.34.25.34.13.58.29.84.55.26.26.42.5.55.84.1.26.22.64.25 1.34.03.76.04.99.04 2.91s-.01 2.15-.04 2.91c-.03.7-.15 1.08-.25 1.34-.13.34-.29.58-.55.84-.26.26-.5.42-.84.55-.26.1-.64.22-1.34.25-.76.03-.99.04-2.91.04s-2.15-.01-2.91-.04c-.7-.03-1.08-.15-1.34-.25-.34-.13-.58-.29-.84-.55-.26-.26-.42-.5-.55-.84-.1-.26-.22-.64-.25-1.34-.03-.76-.04-.99-.04-2.91s.01-2.15.04-2.91c.03-.7.15-1.08.25-1.34.13-.34.29-.58.55-.84.26-.26.5-.42.84-.55.26-.1.64-.22 1.34-.25.76-.03.99-.04 2.91-.04z"
-                        />
-                      </svg>
-                      <span>{t(locale, "social_instagram")}</span>
-                    </a>
-                  </li>
-                ) : null}
-                {site.x ? (
-                  <li>
-                    <a
-                      className="social-link"
-                      href={site.x}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t(locale, "social_x")}
-                    >
-                      <svg
-                        className="social-logo x-logo"
-                        viewBox="0 0 24 24"
-                        width="20"
-                        height="20"
-                        aria-hidden="true"
-                      >
-                        <rect width="24" height="24" rx="6.5" fill="#000" />
-                        <path
-                          fill="#fff"
-                          d="M13.54 10.94 18.2 5.5h-1.1l-4.05 4.72L9.8 5.5H5.75l4.89 7.12L5.9 18.5h1.1l4.27-4.98 3.41 4.98h4.05l-5.19-7.56zm-1.51 1.76-.5-.71-3.95-5.64h1.7l3.18 4.55.5.71 4.13 5.91h-1.7l-3.36-4.82z"
-                        />
-                      </svg>
-                      <span>{t(locale, "social_x")}</span>
-                    </a>
-                  </li>
-                ) : null}
               </ul>
             </div>
           </div>
