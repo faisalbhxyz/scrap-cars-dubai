@@ -1190,7 +1190,15 @@ body.rtl .step::after { transform-origin: right; }
   font-size: .85rem;
 }
 
-/* Reveal — visible by default so hydration delay never blanks content */
+.section,
+.cta-band {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 720px;
+}
+.section-services {
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
+}
 .reveal {
   opacity: 1;
   transform: none;

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { localePath, t, type Locale } from "@/lib/i18n";
 import { services } from "@/lib/services";
 import { phoneHref, site } from "@/lib/site";
@@ -13,15 +13,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <Image
-                src="/images/logo.png"
-                alt={t(locale, "site_name")}
-                width={180}
-                height={90}
-                sizes="140px"
-                quality={75}
-                className="custom-logo"
-              />
+              <BrandLogo alt={t(locale, "site_name")} width={180} height={90} />
               <p>{t(locale, "footer_about")}</p>
               <div className="footer-socials" aria-label="Social media">
                 {site.facebook ? (

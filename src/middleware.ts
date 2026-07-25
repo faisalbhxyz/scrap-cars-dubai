@@ -23,6 +23,7 @@ export function middleware(request: NextRequest) {
   if (pathname === "/ar" || pathname.startsWith("/ar/")) {
     const res = NextResponse.next();
     res.headers.set("x-locale", "ar");
+    res.headers.set("x-pathname", pathname);
     return res;
   }
 
@@ -31,6 +32,7 @@ export function middleware(request: NextRequest) {
   url.pathname = pathname === "/" ? "/en" : `/en${pathname}`;
   const res = NextResponse.rewrite(url);
   res.headers.set("x-locale", "en");
+  res.headers.set("x-pathname", pathname);
   return res;
 }
 

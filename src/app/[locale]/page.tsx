@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { HeroMedia } from "@/components/HeroMedia";
 import {
   abuDhabiLocations,
   dubaiLocations,
@@ -81,18 +82,7 @@ export default async function HomePage({
   return (
     <main id="main">
       <section className="hero">
-        <div className="hero-media" aria-hidden="true">
-          <Image
-            src="/images/yard/car-scrap-yard-dubai-salvage-lot.jpg"
-            alt={t(locale, "img_alt_hero")}
-            width={1200}
-            height={1185}
-            sizes="100vw"
-            quality={65}
-            priority
-            fetchPriority="high"
-          />
-        </div>
+        <HeroMedia alt={t(locale, "img_alt_hero")} />
         <div className="hero-scrim" aria-hidden="true" />
         <div className="container hero-inner">
           <p className="hero-brand">

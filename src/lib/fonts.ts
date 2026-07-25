@@ -1,11 +1,13 @@
 import { Archivo_Black, Cairo, Manrope, Montserrat } from "next/font/google";
 
+// preload:false — free early bandwidth for LCP image on mobile
 export const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   display: "swap",
   variable: "--ff-manrope",
   adjustFontFallback: true,
+  preload: false,
 });
 
 export const montserrat = Montserrat({
@@ -14,6 +16,7 @@ export const montserrat = Montserrat({
   display: "swap",
   variable: "--ff-montserrat",
   adjustFontFallback: true,
+  preload: false,
 });
 
 export const archivoBlack = Archivo_Black({
@@ -22,6 +25,7 @@ export const archivoBlack = Archivo_Black({
   display: "swap",
   variable: "--ff-archivo",
   adjustFontFallback: true,
+  preload: false,
 });
 
 /** Arabic UI — load only on `ar` locale to keep EN LCP light. */

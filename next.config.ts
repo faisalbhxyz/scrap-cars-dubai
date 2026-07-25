@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
     // Cap widths so mobile never pulls 2x/3x oversized sources
     deviceSizes: [640, 750, 828, 1080, 1200],
-    imageSizes: [48, 96, 128, 256],
+    imageSizes: [48, 64, 96, 128, 160, 256, 320, 384],
     qualities: [65, 70, 75, 80],
   },
   async headers() {
