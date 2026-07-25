@@ -122,7 +122,10 @@ export default async function ServiceDetailPage({
                 alt={t(locale, `svc_${sid}_img_alt`)}
                 width={640}
                 height={640}
+                sizes="(max-width: 900px) 100vw, 420px"
+                quality={70}
                 priority
+                fetchPriority="high"
               />
             </figure>
           </div>
@@ -220,6 +223,8 @@ export default async function ServiceDetailPage({
                     alt={t(locale, item.titleKey)}
                     width={120}
                     height={120}
+                    sizes="120px"
+                    quality={70}
                   />
                 </span>
                 <h3>{t(locale, item.titleKey)}</h3>

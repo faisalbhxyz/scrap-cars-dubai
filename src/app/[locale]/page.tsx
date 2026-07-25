@@ -87,7 +87,10 @@ export default async function HomePage({
             alt={t(locale, "img_alt_hero")}
             width={1200}
             height={1185}
+            sizes="100vw"
+            quality={65}
             priority
+            fetchPriority="high"
           />
         </div>
         <div className="hero-scrim" aria-hidden="true" />
@@ -136,6 +139,8 @@ export default async function HomePage({
                     alt={`${t(locale, svc.titleKey)} — ${t(locale, "site_name")}`}
                     width={120}
                     height={120}
+                    sizes="120px"
+                    quality={70}
                   />
                 </span>
                 <h3>{t(locale, svc.titleKey)}</h3>
@@ -245,7 +250,15 @@ export default async function HomePage({
             {brands.map(([slug, name]) => (
               <span className="brand-chip" key={slug}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/images/brands/${slug}.svg`} alt={name} width={120} height={48} />
+                <img
+                  src={`/images/brands/${slug}.svg`}
+                  alt={name}
+                  width={120}
+                  height={48}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                />
               </span>
             ))}
           </div>
@@ -315,6 +328,8 @@ export default async function HomePage({
                 alt={t(locale, "img_alt_salvage")}
                 width={1200}
                 height={898}
+                sizes="(max-width: 900px) 100vw, 50vw"
+                quality={70}
               />
             </figure>
           </div>
@@ -331,6 +346,14 @@ export default async function HomePage({
                   alt={t(locale, shot.alt)}
                   width={shot.w}
                   height={shot.h}
+                  sizes={
+                    shot.mod === "ops-span-full"
+                      ? "100vw"
+                      : shot.mod === "ops-span-wide"
+                        ? "(max-width: 768px) 100vw, 66vw"
+                        : "(max-width: 768px) 50vw, 33vw"
+                  }
+                  quality={65}
                 />
               </figure>
             ))}

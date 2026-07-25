@@ -13,8 +13,8 @@
   --scd-line: rgba(42, 143, 60, 0.28);
   --scd-border: #dce3d9;
   /* next/font CSS variables (--ff-*) are set on <html> */
-  --font-display: var(--ff-montserrat), "Montserrat", var(--ff-syne), "Syne", sans-serif;
-  --font-body: var(--ff-manrope), "Manrope", var(--ff-cairo), "Cairo", sans-serif;
+  --font-display: var(--ff-montserrat), "Montserrat", sans-serif;
+  --font-body: var(--ff-manrope), "Manrope", var(--ff-cairo, "Cairo"), sans-serif;
   --font-brand: var(--ff-archivo), "Archivo Black", sans-serif;
   --font-ui: var(--ff-montserrat), "Montserrat", sans-serif;
   --radius: 4px;
@@ -239,12 +239,20 @@ p { margin: 0 0 1em; }
   height: 100%;
   object-fit: cover;
   object-position: 58% 42%;
-  transform: scale(1.04);
+  transform: scale(1.04) translateZ(0);
+  will-change: transform;
   animation: heroKen 22s ease-in-out infinite alternate;
 }
 @keyframes heroKen {
   from { transform: scale(1.04) translate3d(0, 0, 0); }
   to { transform: scale(1.1) translate3d(-1.5%, -1%, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-media img {
+    animation: none;
+    will-change: auto;
+    transform: none;
+  }
 }
 .hero-scrim {
   position: absolute;
@@ -1182,15 +1190,21 @@ body.rtl .step::after { transform-origin: right; }
   font-size: .85rem;
 }
 
-/* Reveal */
+/* Reveal — visible by default so hydration delay never blanks content */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-.reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Floating WhatsApp */

@@ -1,43 +1,8 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Archivo_Black, Cairo, Manrope, Montserrat, Syne } from "next/font/google";
+import { archivoBlack, manrope, montserrat } from "@/lib/fonts";
 import "./globals.css";
 import "./main.css";
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  display: "swap",
-  variable: "--ff-syne",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  variable: "--ff-manrope",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  display: "swap",
-  variable: "--ff-montserrat",
-});
-
-const archivoBlack = Archivo_Black({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--ff-archivo",
-});
-
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "600", "700", "800"],
-  display: "swap",
-  variable: "--ff-cairo",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -107,7 +72,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={`${syne.variable} ${manrope.variable} ${montserrat.variable} ${archivoBlack.variable} ${cairo.variable}`}
+      className={`${manrope.variable} ${montserrat.variable} ${archivoBlack.variable}`}
     >
       <body className={`lang-${locale} ${dir}`}>{children}</body>
     </html>

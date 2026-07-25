@@ -21,9 +21,10 @@ export default async function LocaleLayout({
   if (!isLocale(raw)) notFound();
   const locale = raw as Locale;
   const dir = locale === "ar" ? "rtl" : "ltr";
+  const shellClass = `site-shell lang-${locale} ${dir}`;
 
-  return (
-    <div className={`site-shell lang-${locale} ${dir}`} lang={locale} dir={dir}>
+  const body = (
+    <>
       <JsonLd data={[localBusinessJsonLd(locale), websiteJsonLd(locale)]} />
       <a className="skip-link screen-reader-text" href="#main">
         {locale === "ar" ? "تخطي إلى المحتوى" : "Skip to content"}
@@ -32,6 +33,17 @@ export default async function LocaleLayout({
       {children}
       <Footer locale={locale} />
       <RevealInit />
+    </>
+  );
+
+  if (locale === "ar") {
+    const { ArabicFontScope } = await import("@/components/ArabicFontScope");
+    return <ArabicFontScope className={shellClass}>{body}</ArabicFontScope>;
+  }
+
+  return (
+    <div className={shellClass} lang={locale} dir={dir}>
+      {body}
     </div>
   );
 }

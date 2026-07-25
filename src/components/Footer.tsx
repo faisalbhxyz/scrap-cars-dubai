@@ -18,6 +18,8 @@ export function Footer({ locale }: { locale: Locale }) {
                 alt={t(locale, "site_name")}
                 width={180}
                 height={90}
+                sizes="140px"
+                quality={75}
                 className="custom-logo"
               />
               <p>{t(locale, "footer_about")}</p>

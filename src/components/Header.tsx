@@ -37,8 +37,9 @@ export function Header({ locale }: { locale: Locale }) {
             alt={t(locale, "site_name")}
             width={200}
             height={100}
+            sizes="160px"
+            quality={80}
             className="custom-logo"
-            priority
           />
         </Link>
 
