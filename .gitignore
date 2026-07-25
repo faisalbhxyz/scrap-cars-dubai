@@ -1,53 +1,46 @@
-# OS / editor
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-Thumbs.db
-*.log
-.idea/
-.vscode/
-*.swp
+*.pem
+*.code-workspace
+AGENTS.md
+CLAUDE.md
+/Car Scrap Dubai.png
+/ChatGPT Image*.png
 
-# PHP / Composer
-/vendor/
-composer.lock
-
-# Node
-node_modules/
+# debug
 npm-debug.log*
+yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# Env / secrets
-.env
-.env.*
-wp-cli.local.yml
-wp-config.php
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
 .vercel
 
-# Debug / cache
-wp-content/debug.log
-wp-content/cache/
-wp-content/upgrade/
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/upgrade-temp-backup/
-
-# Default WP themes (not customized)
-wp-content/themes/twentytwentythree/
-wp-content/themes/twentytwentyfour/
-wp-content/themes/twentytwentyfive/
-
-# Large stock plugins (install via WP)
-wp-content/plugins/jetpack/
-
-# SQLite / local DB dumps
-*.sqlite
-*.sql
-wp-content/database/*.sqlite
-
-# Temp import scripts
-logo.b64
-*.b64
-scd-setup.php
-import-logo.php
-
-.phpunit.result.cache
+# typescript
+*.tsbuildinfo
+next-env.d.ts

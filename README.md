@@ -1,16 +1,30 @@
-# Scrap Cars Dubai / Car Scrap Dubai
+# Car Scrap Dubai (Next.js)
 
-Dubai scrap car buyer website — free pickup, instant cash offers across the UAE.
-
-**Local Studio:** http://localhost:8882/
+Next.js website for **Car Scrap Dubai** — sell scrap, damaged, and old cars for cash across Dubai & the UAE.
 
 ## Stack
-- WordPress (Studio)
-- Custom theme: `wp-content/themes/scrapcarsdubai`
-- Brand: black + green
-- Phone / WhatsApp: +971 54 567 4515
 
-## Features
-- EN / AR bilingual (RTL)
-- SEO meta, hreflang, LocalBusiness schema
-- Service pages, FAQs, About
+- Next.js (App Router) + TypeScript
+- EN / AR (RTL) via `/` and `/ar`
+- Existing brand CSS and yard/service imagery
+
+## Develop
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+- `npm run dev` — local development
+- `npm run build` — production build
+- `npm start` — serve production build
+
+## Contact defaults
+
+- Phone: +971 54 567 4515 / +971 52 778 1618
+- Email: info@carscrapdubai.com
+- Address: Dubai, United Arab Emirates · Sharjah Industrial Area 10

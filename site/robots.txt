@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://scrap-cars-dubai.vercel.app/sitemap.xml
