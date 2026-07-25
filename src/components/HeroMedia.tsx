@@ -17,9 +17,9 @@ export function HeroMedia({ alt }: { alt: string }) {
           <img
             src="/images/yard/hero-lcp.jpg"
             alt={alt}
-            width={750}
-            height={740}
-            decoding="sync"
+            width={720}
+            height={711}
+            decoding="async"
             fetchPriority="high"
           />
         </picture>

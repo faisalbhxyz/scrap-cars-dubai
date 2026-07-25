@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "mkdir -p public/css && cp src/app/main.css public/css/site.css",
+    "predev": "mkdir -p public/css && cp src/app/main.css public/css/site.css",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -26,5 +28,11 @@
     "eslint-config-next": "16.2.11",
     "typescript": "^5",
     "wrangler": "^4.114.0"
-  }
+  },
+  "browserslist": [
+    "chrome >= 111",
+    "edge >= 111",
+    "firefox >= 111",
+    "safari >= 16.4"
+  ]
 }

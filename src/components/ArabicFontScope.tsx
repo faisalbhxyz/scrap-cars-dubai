@@ -1,6 +1,4 @@
-import { cairo } from "@/lib/fonts";
-
-/** Isolates Cairo so EN routes never pay for Arabic font bytes. */
+/** Arabic shell — system fonts (no next/font CSS leaked onto EN). */
 export function ArabicFontScope({
   className,
   children,
@@ -9,7 +7,7 @@ export function ArabicFontScope({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${className} ${cairo.variable}`} lang="ar" dir="rtl">
+    <div className={className} lang="ar" dir="rtl">
       {children}
     </div>
   );

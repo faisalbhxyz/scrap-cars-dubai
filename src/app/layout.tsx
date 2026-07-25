@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { archivoBlack, manrope, montserrat } from "@/lib/fonts";
+import { criticalCss } from "@/app/critical-styles";
+import { DeferredCSS } from "@/components/DeferredCSS";
 import "./globals.css";
-import "./main.css";
 
 export const metadata: Metadata = {
   title: {
@@ -68,13 +68,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html
-      lang={locale}
-      dir={dir}
-      suppressHydrationWarning
-      className={`${manrope.variable} ${montserrat.variable} ${archivoBlack.variable}`}
-    >
-      <body className={`lang-${locale} ${dir}`}>{children}</body>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
+      </head>
+      <body className={`lang-${locale} ${dir}`}>
+        <DeferredCSS />
+        {children}
+      </body>
     </html>
   );
 }
