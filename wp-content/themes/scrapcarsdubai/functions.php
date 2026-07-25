@@ -64,7 +64,8 @@ function scd_customize_register( $wp_customize ) {
 		'scd_email'     => array( 'Email', 'info@carscrapdubai.com', 'text' ),
 		'scd_address'   => array( 'Address', "Dubai, United Arab Emirates\nSharjah Industrial Area 10", 'textarea' ),
 		'scd_facebook'  => array( 'Facebook URL', 'https://www.facebook.com/profile.php?id=100025197109278', 'text' ),
-		'scd_instagram' => array( 'Instagram URL', '', 'text' ),
+		'scd_instagram' => array( 'Instagram URL', 'https://www.instagram.com/scrapcar0545674515', 'text' ),
+		'scd_x'         => array( 'X (Twitter) URL', 'https://x.com/ScrapCar5', 'text' ),
 	);
 
 	foreach ( $fields as $id => $data ) {
@@ -135,7 +136,10 @@ function scd_facebook() {
 	return get_theme_mod( 'scd_facebook', 'https://www.facebook.com/profile.php?id=100025197109278' );
 }
 function scd_instagram() {
-	return get_theme_mod( 'scd_instagram', '' );
+	return get_theme_mod( 'scd_instagram', 'https://www.instagram.com/scrapcar0545674515' );
+}
+function scd_x() {
+	return get_theme_mod( 'scd_x', 'https://x.com/ScrapCar5' );
 }
 
 /**

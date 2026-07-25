@@ -253,8 +253,9 @@ function scd_schema_jsonld( $desc, $site_url, $image, $canonical ) {
 			'description'     => preg_replace( '/\\s+/', ' ', str_replace( array( "\r\n", "\n", "\r" ), ', ', $addr ) ),
 		),
 		'sameAs'             => array_values( array_filter( array(
-			get_theme_mod( 'scd_facebook', '' ),
-			get_theme_mod( 'scd_instagram', '' ),
+			scd_facebook(),
+			scd_instagram(),
+			scd_x(),
 		) ) ),
 		'hasOfferCatalog'    => array(
 			'@type'           => 'OfferCatalog',

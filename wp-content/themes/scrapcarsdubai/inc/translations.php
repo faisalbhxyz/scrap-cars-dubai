@@ -267,6 +267,7 @@ function scd_strings() {
 		'contact_hours' => array( 'en' => 'Working Hours', 'ar' => 'ساعات العمل' ),
 		'contact_hours_val' => array( 'en' => '24/7', 'ar' => 'على مدار الساعة' ),
 		'social_instagram' => array( 'en' => 'Instagram', 'ar' => 'إنستغرام' ),
+		'social_x' => array( 'en' => 'X', 'ar' => 'إكس' ),
 		'social_facebook' => array( 'en' => 'Facebook', 'ar' => 'فيسبوك' ),
 		'form_name' => array( 'en' => 'Your Name', 'ar' => 'اسمك' ),
 		'form_phone' => array( 'en' => 'Phone Number', 'ar' => 'رقم الهاتف' ),

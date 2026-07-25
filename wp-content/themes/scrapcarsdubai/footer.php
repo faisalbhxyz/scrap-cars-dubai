@@ -43,6 +43,17 @@
 					<li class="footer-address-line"><?php echo esc_html( $addr_line ); ?></li>
 					<?php endforeach; ?>
 					<li><?php scd_e( 'contact_hours' ); ?>: <?php scd_e( 'contact_hours_val' ); ?></li>
+					<?php if ( scd_facebook() ) : ?>
+					<li>
+						<a class="social-link" href="<?php echo esc_url( scd_facebook() ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( scd__( 'social_facebook' ) ); ?>">
+							<svg class="social-logo facebook-logo" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+								<rect width="24" height="24" rx="6.5" fill="#1877F2"/>
+								<path fill="#fff" d="M16.67 12.55h-2.18V19h-3.02v-6.45H9.7V9.95h1.77V8.33c0-1.75 1.07-2.7 2.63-2.7.75 0 1.39.06 1.58.08v1.83h-1.08c-.85 0-1.01.4-1.01.99v1.42h2.15l-.28 2.6z"/>
+							</svg>
+							<span><?php scd_e( 'social_facebook' ); ?></span>
+						</a>
+					</li>
+					<?php endif; ?>
 					<?php if ( scd_instagram() ) : ?>
 					<li>
 						<a class="social-link" href="<?php echo esc_url( scd_instagram() ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( scd__( 'social_instagram' ) ); ?>">
@@ -62,20 +73,20 @@
 						</a>
 					</li>
 					<?php endif; ?>
-					<?php if ( scd_facebook() ) : ?>
+					<?php if ( scd_x() ) : ?>
 					<li>
-						<a class="social-link" href="<?php echo esc_url( scd_facebook() ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( scd__( 'social_facebook' ) ); ?>">
-							<svg class="social-logo facebook-logo" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-								<rect width="24" height="24" rx="6.5" fill="#1877F2"/>
-								<path fill="#fff" d="M16.67 12.55h-2.18V19h-3.02v-6.45H9.7V9.95h1.77V8.33c0-1.75 1.07-2.7 2.63-2.7.75 0 1.39.06 1.58.08v1.83h-1.08c-.85 0-1.01.4-1.01.99v1.42h2.15l-.28 2.6z"/>
+						<a class="social-link" href="<?php echo esc_url( scd_x() ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( scd__( 'social_x' ) ); ?>">
+							<svg class="social-logo x-logo" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+								<rect width="24" height="24" rx="6.5" fill="#000"/>
+								<path fill="#fff" d="M13.54 10.94 18.2 5.5h-1.1l-4.05 4.72L9.8 5.5H5.75l4.89 7.12L5.9 18.5h1.1l4.27-4.98 3.41 4.98h4.05l-5.19-7.56zm-1.51 1.76-.5-.71-3.95-5.64h1.7l3.18 4.55.5.71 4.13 5.91h-1.7l-3.36-4.82z"/>
 							</svg>
-							<span><?php scd_e( 'social_facebook' ); ?></span>
+							<span><?php scd_e( 'social_x' ); ?></span>
 						</a>
 					</li>
 					<?php endif; ?>
 				</ul>
 			</div>
-		</div>
+			</div>
 		<div class="footer-bottom">
 			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php scd_e( 'footer_rights' ); ?></span>
 			<a href="https://wa.me/8801310790697" target="_blank" rel="noopener noreferrer">Developed By Adstryker</a>
