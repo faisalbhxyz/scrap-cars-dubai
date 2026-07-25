@@ -14,6 +14,7 @@ const nav = [
   { key: "nav_locations", path: "/#locations" },
   { key: "nav_why", path: "/#why-us" },
   { key: "nav_about", path: "/about-us" },
+  { key: "nav_blog", path: "/blog" },
   { key: "nav_faq", path: "/faqs" },
 ] as const;
 

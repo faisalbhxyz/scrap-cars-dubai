@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/JsonLd";
 import { isLocale, localePath, t, type Locale } from "@/lib/i18n";
+import {
+  breadcrumbJsonLd,
+  buildPageMetadata,
+  faqPageJsonLd,
+  serviceJsonLd,
+} from "@/lib/seo";
 import {
   getServiceBySlug,
   serviceKeyId,
@@ -16,6 +24,26 @@ export function generateStaticParams() {
   );
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale: raw, slug } = await params;
+  if (!isLocale(raw)) return {};
+  const locale = raw as Locale;
+  const svc = getServiceBySlug(slug);
+  if (!svc) return {};
+  const sid = serviceKeyId(svc.id);
+  return buildPageMetadata({
+    locale,
+    path: `/${svc.slug}`,
+    title: t(locale, `svc_${sid}_seo_title`),
+    description: t(locale, `svc_${sid}_seo_desc`),
+    image: `/images/services/${svc.image}.jpg`,
+  });
+}
+
 export default async function ServiceDetailPage({
   params,
 }: {
@@ -28,15 +56,38 @@ export default async function ServiceDetailPage({
   if (!svc) notFound();
 
   const sid = serviceKeyId(svc.id);
+  const servicePath = `/${svc.slug}`;
+  const serviceTitle = t(locale, svc.titleKey);
+  const serviceImage = `/images/services/${svc.image}.jpg`;
+  const faqs = [1, 2, 3].map((i) => ({
+    question: t(locale, `svc_${sid}_faq_q${i}`),
+    answer: t(locale, `svc_${sid}_faq_a${i}`),
+  }));
   const waPrefill = whatsappHref(
     locale === "ar"
-      ? `مرحباً، أريد بيع: ${t(locale, svc.titleKey)}`
-      : `Hi, I want to sell: ${t(locale, svc.titleKey)}`,
+      ? `مرحباً، أريد بيع: ${serviceTitle}`
+      : `Hi, I want to sell: ${serviceTitle}`,
   );
   const related = services.filter((s) => s.id !== svc.id).slice(0, 4);
 
   return (
     <main id="main" className="service-detail">
+      <JsonLd
+        data={[
+          breadcrumbJsonLd(locale, [
+            { name: t(locale, "nav_home"), path: "/" },
+            { name: serviceTitle, path: servicePath },
+          ]),
+          serviceJsonLd({
+            locale,
+            name: serviceTitle,
+            description: t(locale, `svc_${sid}_seo_desc`),
+            path: servicePath,
+            image: serviceImage,
+          }),
+          faqPageJsonLd(faqs),
+        ]}
+      />
       <section className="page-hero service-detail-hero">
         <div className="container service-detail-hero-inner">
           <nav className="breadcrumbs" aria-label="Breadcrumb">
@@ -108,10 +159,10 @@ export default async function ServiceDetailPage({
 
             <h2>{t(locale, "faq_title")}</h2>
             <div className="faq-list">
-              {[1, 2, 3].map((i) => (
-                <details className="faq-item" key={i}>
-                  <summary>{t(locale, `svc_${sid}_faq_q${i}`)}</summary>
-                  <p>{t(locale, `svc_${sid}_faq_a${i}`)}</p>
+              {faqs.map((faq) => (
+                <details className="faq-item" key={faq.question}>
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
                 </details>
               ))}
             </div>

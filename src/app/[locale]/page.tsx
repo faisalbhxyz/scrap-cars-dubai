@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,8 +8,21 @@ import {
   uaeLocations,
 } from "@/lib/locations";
 import { isLocale, localePath, locationLabel, t, type Locale } from "@/lib/i18n";
+import { buildPageMetadata, seoText } from "@/lib/seo";
 import { services } from "@/lib/services";
 import { phoneHref, site, whatsappHref } from "@/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: raw } = await params;
+  if (!isLocale(raw)) return {};
+  const locale = raw as Locale;
+  const { title, description } = seoText(locale, "home_seo_title", "home_seo_desc");
+  return buildPageMetadata({ locale, path: "/", title, description });
+}
 
 const brands = [
   ["toyota", "Toyota"],

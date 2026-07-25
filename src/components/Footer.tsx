@@ -119,6 +119,9 @@ export function Footer({ locale }: { locale: Locale }) {
                   <Link href={localePath(locale, "/about-us")}>{t(locale, "nav_about")}</Link>
                 </li>
                 <li>
+                  <Link href={localePath(locale, "/blog")}>{t(locale, "nav_blog")}</Link>
+                </li>
+                <li>
                   <Link href={localePath(locale, "/privacy-policy")}>
                     {t(locale, "nav_privacy")}
                   </Link>

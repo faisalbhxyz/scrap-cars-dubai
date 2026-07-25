@@ -7,6 +7,72 @@
         "en": "Sell your scrap, damaged & old cars for the best cash offer in Dubai & UAE",
         "ar": "بع سيارتك السكراب أو التالفة أو القديمة بأفضل سعر نقدي في دبي والإمارات"
     },
+    "home_seo_title": {
+        "en": "Car Scrap Dubai | Sell Scrap Cars for Cash UAE",
+        "ar": "كار سكراب دبي | بيع سيارات السكراب نقداً في الإمارات"
+    },
+    "home_seo_desc": {
+        "en": "Sell your scrap, damaged & old cars for the best cash offer in Dubai & UAE. Free pickup, fair prices, fast payment. Call Car Scrap Dubai today.",
+        "ar": "بع سيارتك السكراب أو التالفة أو القديمة بأفضل سعر نقدي في دبي والإمارات. استلام مجاني وأسعار عادلة ودفع سريع. اتصل بكار سكراب دبي اليوم."
+    },
+    "about_seo_title": {
+        "en": "About Us | Car Scrap Dubai — Trusted Scrap Car Buyers UAE",
+        "ar": "من نحن | كار سكراب دبي — مشترو سيارات سكراب موثوقون"
+    },
+    "about_seo_desc": {
+        "en": "Learn about Car Scrap Dubai — professional scrap car buyers offering free pickup, fair cash offers, and responsible recycling across Dubai and the UAE.",
+        "ar": "تعرف على كار سكراب دبي — مشترو سيارات سكراب محترفون مع استلام مجاني وعروض نقدية عادلة وإعادة تدوير مسؤولة في دبي والإمارات."
+    },
+    "contact_seo_title": {
+        "en": "Contact Us | Car Scrap Dubai — Call or WhatsApp for a Quote",
+        "ar": "اتصل بنا | كار سكراب دبي — اتصال أو واتساب لعرض سعر"
+    },
+    "contact_seo_desc": {
+        "en": "Contact Car Scrap Dubai for a free scrap car quote. Call, WhatsApp, or send a message. Fast response across Dubai and the UAE.",
+        "ar": "تواصل مع كار سكراب دبي لعرض سعر مجاني. اتصل أو واتساب أو أرسل رسالة. رد سريع في دبي والإمارات."
+    },
+    "faq_seo_title": {
+        "en": "FAQs | Car Scrap Dubai — Scrap Car Selling Questions Answered",
+        "ar": "الأسئلة الشائعة | كار سكراب دبي — إجابات بيع سيارات السكراب"
+    },
+    "faq_seo_desc": {
+        "en": "Answers to common questions about selling scrap, damaged, and old cars in Dubai & UAE — pickup, payment, documents, and pricing.",
+        "ar": "إجابات عن أسئلة شائعة حول بيع سيارات السكراب والتالفة والقديمة في دبي والإمارات — الاستلام والدفع والمستندات والأسعار."
+    },
+    "how_seo_title": {
+        "en": "How It Works | Sell Your Scrap Car in 4 Easy Steps",
+        "ar": "كيف نعمل | بع سيارة السكراب في 4 خطوات سهلة"
+    },
+    "how_seo_desc": {
+        "en": "See how Car Scrap Dubai buys scrap cars: request a quote, get a fair offer, free pickup, and fast cash payment across the UAE.",
+        "ar": "اعرف كيف تشتري كار سكراب دبي سيارات السكراب: اطلب عرضاً، احصل على سعر عادل، استلام مجاني، ودفع نقدي سريع في الإمارات."
+    },
+    "why_seo_title": {
+        "en": "Why Choose Us | Best Scrap Car Buyers in Dubai & UAE",
+        "ar": "لماذا نحن | أفضل مشترو سيارات سكراب في دبي والإمارات"
+    },
+    "why_seo_desc": {
+        "en": "Why choose Car Scrap Dubai: best cash prices, free pickup, trusted service, fast payment, and hassle-free scrap car selling across the UAE.",
+        "ar": "لماذا تختار كار سكراب دبي: أفضل الأسعار النقدية، استلام مجاني، خدمة موثوقة، دفع سريع، وبيع سكراب بلا متاعب في الإمارات."
+    },
+    "privacy_seo_title": {
+        "en": "Privacy Policy | Car Scrap Dubai",
+        "ar": "سياسة الخصوصية | كار سكراب دبي"
+    },
+    "privacy_seo_desc": {
+        "en": "Read the Car Scrap Dubai privacy policy — how we collect, use, and protect your information when you request a scrap car quote.",
+        "ar": "اقرأ سياسة خصوصية كار سكراب دبي — كيف نجمع معلوماتك ونستخدمها ونحميها عند طلب عرض سعر لسيارة سكراب."
+    },
+    "blog_seo_title": {
+        "en": "Scrap Car Blog Dubai | Cash Selling Guides",
+        "ar": "مدونة سكراب السيارات دبي | نصائح بيع نقدًا"
+    },
+    "blog_seo_desc": {
+        "en": "High-intent guides to sell scrap, damaged, and accident cars in Dubai & UAE — cash offers and free pickup.",
+        "ar": "أدلة عالية النية لبيع سيارات السكراب والتالفة والحوادث في دبي والإمارات — عروض نقدية واستلام مجاني."
+    },
+
+
     "nav_home": {
         "en": "Home",
         "ar": "الرئيسية"
@@ -42,6 +108,26 @@
     "nav_blog": {
         "en": "Blog",
         "ar": "المدونة"
+    },
+    "blog_title": {
+        "en": "Scrap Car Guides for Dubai & UAE",
+        "ar": "أدلة سكراب السيارات لدبي والإمارات"
+    },
+    "blog_sub": {
+        "en": "High-intent tips to sell scrap, damaged, accidental, and non-running cars for cash — with free pickup.",
+        "ar": "نصائح عالية النية لبيع سيارات السكراب والتالفة والحوادث وغير العاملة نقدًا — مع استلام مجاني."
+    },
+    "blog_read_more": {
+        "en": "Read guide",
+        "ar": "اقرأ الدليل"
+    },
+    "blog_more_title": {
+        "en": "More scrap car guides",
+        "ar": "المزيد من أدلة سكراب السيارات"
+    },
+    "blog_related_service": {
+        "en": "Related service:",
+        "ar": "خدمة ذات صلة:"
     },
     "nav_privacy": {
         "en": "Privacy Policy",

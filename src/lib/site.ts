@@ -10,6 +10,7 @@ export const site = {
   instagram: "https://www.instagram.com/scrapcar0545674515",
   x: "https://x.com/ScrapCar5",
   developerWa: "https://wa.me/8801310790697",
+  ogImage: "/images/yard/car-scrap-yard-dubai-salvage-lot.jpg",
 } as const;
 
 export function phoneHref(phone: string = site.phone) {

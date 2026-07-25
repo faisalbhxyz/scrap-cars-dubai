@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/JsonLd";
 import { isLocale, t, type Locale } from "@/lib/i18n";
+import { breadcrumbJsonLd, buildPageMetadata, seoText } from "@/lib/seo";
 import { phoneHref, whatsappHref } from "@/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: raw } = await params;
+  if (!isLocale(raw)) return {};
+  const locale = raw as Locale;
+  const { title, description } = seoText(locale, "about_seo_title", "about_seo_desc");
+  return buildPageMetadata({ locale, path: "/about-us", title, description });
+}
 
 export default async function AboutPage({
   params,
@@ -13,6 +28,12 @@ export default async function AboutPage({
 
   return (
     <main id="main">
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          { name: t(locale, "nav_home"), path: "/" },
+          { name: t(locale, "nav_about"), path: "/about-us" },
+        ])}
+      />
       <section className="page-hero">
         <div className="container">
           <h1>{t(locale, "about_title")}</h1>
