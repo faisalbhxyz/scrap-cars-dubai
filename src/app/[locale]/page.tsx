@@ -312,15 +312,18 @@ export default async function HomePage({
               <p>{t(locale, "about_p1")}</p>
               <p>{t(locale, "about_p2")}</p>
             </div>
-            <figure className="yard-shot yard-shot--feature">
+            <figure className="yard-shot yard-shot--feature yard-shot--highlight">
               <Image
-                src="/images/yard/junk-car-removal-dubai-auto-salvage.jpg"
+                src="/images/yard/scrap-yard-dubai-burnt-car-salvage.jpg"
                 alt={t(locale, "img_alt_salvage")}
-                width={1200}
-                height={898}
+                width={1000}
+                height={901}
                 sizes="(max-width: 900px) 100vw, 50vw"
                 quality={70}
               />
+              <figcaption className="yard-caption">
+                {t(locale, "img_caption_highlight")}
+              </figcaption>
             </figure>
           </div>
           <div

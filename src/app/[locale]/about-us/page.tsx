@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { isLocale, t, type Locale } from "@/lib/i18n";
@@ -42,6 +43,20 @@ export default async function AboutPage({
       </section>
       <section className="content-block">
         <div className="container prose">
+          <figure className="yard-shot yard-shot--feature yard-shot--highlight about-highlight">
+            <Image
+              src="/images/yard/scrap-yard-dubai-burnt-car-salvage.jpg"
+              alt={t(locale, "img_alt_salvage")}
+              width={1000}
+              height={901}
+              sizes="(max-width: 900px) 100vw, 720px"
+              quality={70}
+              priority
+            />
+            <figcaption className="yard-caption">
+              {t(locale, "img_caption_highlight")}
+            </figcaption>
+          </figure>
           <p>{t(locale, "about_p1")}</p>
           <p>{t(locale, "about_p2")}</p>
           <p>{t(locale, "about_p3")}</p>

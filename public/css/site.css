@@ -378,6 +378,31 @@ body.rtl .hero-scrim,
   min-height: clamp(280px, 38vw, 440px);
   box-shadow: 0 18px 48px rgba(17, 17, 17, 0.1);
 }
+.yard-shot--highlight {
+  outline: 1px solid var(--scd-line);
+  box-shadow:
+    0 22px 56px rgba(17, 17, 17, 0.12),
+    0 0 0 1px rgba(42, 143, 60, 0.12);
+}
+.yard-caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 1.1rem 1rem 0.95rem;
+  font-family: var(--font-ui);
+  font-size: clamp(0.82rem, 1.6vw, 0.95rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 14, 10, 0.82) 55%);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+.about-highlight {
+  margin: 0 0 1.75rem;
+  max-width: 720px;
+}
 .yard-copy {
   padding: 0.25rem 0.15rem;
 }
